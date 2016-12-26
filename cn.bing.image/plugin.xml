@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            label="Bing Image Action Set"
+            visible="true"
+            id="cn.bing.image.actionSet">
+         <action
+               class="cn.bing.image.actions.BingImageAction"
+               icon="icons/bing_p.ico"
+               id="cn.bing.image.actions.BingImageAction"
+               label="&amp;LoadImage Action"
+               toolbarPath="bingGroup"
+               tooltip="Load backgroud image from cn.bing.com">
+         </action>
+      </actionSet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="cn.bing.image.preferences.BingImagePreferencePage"
+            id="cn.bing.image.preferences.BingImagePreferencePage"
+            name="BingImage Preferences">
+      </page>
+   </extension>
+   <extension
+         id="cn.bing.image.preferences"
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="cn.bing.image.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+
+</plugin>
